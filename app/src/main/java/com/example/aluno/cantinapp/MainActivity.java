@@ -14,14 +14,23 @@ public class  MainActivity extends AppCompatActivity {
     private Button buttonsmaisre;
     private Button buttonsmenosre;
 
-    private Button buttonsmaisrebo;
-    private Button buttonsmenosrebo;
+    private Button buttonsmaisbo;
+    private Button buttonsmenosbo;
+
+    private Button buttonsmaispa;
+    private Button buttonsmenospa;
 
     private int conta;
     private int contare;
+    private int contabo;
+    private int contapa;
+
 
     private TextView contsalgado;
     private TextView contre;
+    private TextView contbo;
+    private TextView contpa;
+
     private TextView vl;
 
     @Override
@@ -35,12 +44,18 @@ public class  MainActivity extends AppCompatActivity {
         buttonsmaisre = (Button) findViewById(R.id.buttonmaisre);
         buttonsmenosre = (Button) findViewById(R.id.buttonmenosre);
 
-       // buttonsmaisbo = (Button) findViewById(R.id.buttonsmais);
-        //buttonsmenosbo = (Button) findViewById(R.id.buttonsmenos);
+        buttonsmaisbo = (Button) findViewById(R.id.maisbo);
+        buttonsmenosbo = (Button) findViewById(R.id.menosbo);
+
+        buttonsmaispa = (Button) findViewById(R.id.maispa);
+        buttonsmenospa = (Button) findViewById(R.id.menospa);
 
         vl = (TextView) findViewById(R.id.textViewvalor);
+
         contsalgado = (TextView) findViewById(R.id.textViewcont);
         contre = (TextView) findViewById(R.id.textViewcontre);
+        contbo = (TextView) findViewById(R.id.textViewcontbo);
+        contpa = (TextView) findViewById(R.id.textViewcontpa);
 
 
 
@@ -98,7 +113,60 @@ public class  MainActivity extends AppCompatActivity {
                         vl.setText(""+ ( vt-1.50)+"");
                     }
                 });
+                buttonsmaisbo.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        contabo = Integer.parseInt(contbo.getText().toString()) ;
 
+                        contabo = contabo +1;
+
+                        contbo.setText(""+contabo);
+
+                        double vt = Double.parseDouble(vl.getText().toString());
+                        vl.setText(""+ (2.00 + vt)+"");
+
+                    }
+                });
+                buttonsmenosbo.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        contabo = Integer.parseInt(contbo.getText().toString()) ;
+
+                        contabo = contabo -1;
+
+                        contbo.setText(""+contabo);
+
+                        double vt = Double.parseDouble(vl.getText().toString());
+                        vl.setText(""+ ( vt-2.00)+"");
+                    }
+                });
+                buttonsmaispa.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        contapa = Integer.parseInt(contpa.getText().toString()) ;
+
+                        contapa = contapa +1;
+
+                        contpa.setText(""+contabo);
+
+                        double vt = Double.parseDouble(vl.getText().toString());
+                        vl.setText(""+ (0.50 + vt)+"");
+
+                    }
+                });
+                buttonsmenospa.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        contapa = Integer.parseInt(contpa.getText().toString()) ;
+
+                        contapa = contapa -1;
+
+                        contpa.setText(""+contapa);
+
+                        double vt = Double.parseDouble(vl.getText().toString());
+                        vl.setText(""+ ( vt-0.50)+"");
+                    }
+                });
 
 
     }
