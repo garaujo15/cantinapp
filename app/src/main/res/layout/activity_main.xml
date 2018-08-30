@@ -82,7 +82,7 @@
                 android:id="@+id/menosbo"
                 android:layout_width="53dp"
                 android:layout_height="41dp"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="12dp"
                 android:text="-"
                 app:layout_constraintStart_toEndOf="@+id/maisbo"
