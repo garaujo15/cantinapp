@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">cantinapp</string>
+    <string name="ok">0</string>
+    <string name="dialog_fire_missiles">0</string>
 </resources>

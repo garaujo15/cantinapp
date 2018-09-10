@@ -1,10 +1,16 @@
 package com.example.aluno.cantinapp;
 
+import android.annotation.SuppressLint;
+import android.app.Dialog;
+import android.app.DialogFragment;
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class  MainActivity extends AppCompatActivity {
 
@@ -33,6 +39,9 @@ public class  MainActivity extends AppCompatActivity {
 
     private TextView vl;
 
+ 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,6 +68,8 @@ public class  MainActivity extends AppCompatActivity {
 
 
 
+
+
                 buttonsmais.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -77,9 +88,13 @@ public class  MainActivity extends AppCompatActivity {
                  @Override
                  public void onClick(View v) {
                          conta = Integer.parseInt(contsalgado.getText().toString()) ;
+                         if(conta <= 0){
 
-                         conta = conta -1;
 
+
+                         }else {
+                             conta = conta - 1;
+                         }
                          contsalgado.setText(""+conta);
 
                          double vt = Double.parseDouble(vl.getText().toString());
